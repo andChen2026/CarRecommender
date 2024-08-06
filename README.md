@@ -1,6 +1,6 @@
-Tags: #Heap #Trie #REX #Compression
-## Details
-- Goal: Recommend cars to users based on select criteria
+
+## Goal: 
+- Recommend cars to users based on select criteria
 - Utilizes many advanced data structures and algorithmic techniques for efficient search and retrieval times
 	- Tries, Heaps, Regular Expression, Compression, and Dynamic Programming
 - Demonstrates knowledge of advanced data structures and algorithmic techniques.
