@@ -1,13 +1,13 @@
 package org.Utilities;
 import java.util.*;
+import java.io.*;
 
-public class DLB<K, V> implements Map<K, V>  {
+public class DLB<K extends Serializable, V> implements Map<K, V> {
 
     
     public int size() {
         return -1;
     }
-
     
     public boolean isEmpty() {
         return false;
