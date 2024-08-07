@@ -8,15 +8,15 @@ public class DLB<V extends Comparable<V>> {
 
     private int c;
     private Node<V> root; 
-    private List<String> keySet; 
-    private List<V> entrySet;
+    //private List<String> keySet; 
+    //private List<V> entrySet;
 
     public DLB()
     {
         c = 0;
         root = null;
-        keySet = new LinkedList<>();
-        entrySet = new LinkedList<>();
+        //keySet = new LinkedList<>();
+        //entrySet = new LinkedList<>();
     }
 
     public int size() {
@@ -33,7 +33,7 @@ public class DLB<V extends Comparable<V>> {
     }
 
     public V get(String key) { // Return value
-        return null;
+        return get(root, key, 0);
     }
 
     public V get(Node<V> s, String key, int idx)
@@ -69,6 +69,33 @@ public class DLB<V extends Comparable<V>> {
     public void remove(String key) { 
         
     }
+
+    public List<String> keySet()
+    {
+        List<String> ret = new LinkedList<>();
+        collect(ret);
+        return ret;
+    }
+
+    private void collect(List<String> set)
+    {
+        collect(root, set, new StringBuilder());
+    }
+
+    private void collect(Node<V> s, List<String> set, StringBuilder word)
+    {
+        if (s != null && s.isTerminator()) set.add(word.toString());
+        else if (s != null) word.append(s.getLet());
+
+        while (s != null)
+        {
+            collect(s.getDown(), set, word);
+            collect(s.getRight(), set, word);
+        }
+
+        word.deleteCharAt(word.length()-1);
+    }
+
    
     public void clear() { 
        root = null;
