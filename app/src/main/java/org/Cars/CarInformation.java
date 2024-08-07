@@ -3,9 +3,9 @@ import java.io.*;
 
 public class CarInformation implements Serializable{
     String vin, make, model;
-    Integer mileage, mph, mpg;
+    Integer mileage, mph, mpg, price, year;
 
-    public CarInformation(String vin, String make, String model, Integer mileage, Integer mph, Integer mpg)
+    public CarInformation(String vin, String make, String model, Integer mileage, Integer mph, Integer mpg, Integer price, Integer year)
     {
         this.vin = vin;
         this.make = make;
@@ -13,5 +13,7 @@ public class CarInformation implements Serializable{
         this.mileage = mileage;
         this.mph = mph;
         this.mpg = mpg;
+        this.price = price;
+        this.year = year;
     }
 }
