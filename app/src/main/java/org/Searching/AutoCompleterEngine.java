@@ -1,5 +1,7 @@
 package org.Searching;
 
+import org.Tools.DLB;
+
 /*
  A Naive Autocompleter Engine - Uses a DLB as the backing data structure
  @author Andrew Chen

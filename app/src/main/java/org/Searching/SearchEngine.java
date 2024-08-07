@@ -1,5 +1,7 @@
 package org.Searching;
 
+import org.Tools.DLB;
+
 /*
  Class to allow users to search for words
  Utilizes both Autocompleter & Autocorrector engines

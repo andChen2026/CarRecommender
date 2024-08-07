@@ -1,4 +1,4 @@
-package org.Searching;
+package org.Tools;
 import java.util.*;
 /*
  @author Andrew C.
