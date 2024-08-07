@@ -5,9 +5,10 @@ import java.util.*;
  @author Andrew C.
  A S.T used to Map String Keys to Generic Values
  */
-public class DLB<V> {
+public class DLB<V extends Comparable<V>> {
 
     private int c;
+    
 
     public int size() {
         return c;
@@ -40,5 +41,11 @@ public class DLB<V> {
 
     public Set<String> keySet() {
         return null;
+    }
+
+    @SuppressWarnings("hiding")
+    private class Node<V> 
+    {
+        
     }
 }
