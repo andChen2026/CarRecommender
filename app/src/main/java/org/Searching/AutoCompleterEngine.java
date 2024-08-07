@@ -19,11 +19,23 @@ public class AutoCompleterEngine {
         this.cWord = cWord;
     }
 
-    
+    public void complete() // complete the current word
+    {
+
+    }
+
+    public void suggest() // suggest 5 words based on frequency
+    {
+
+    }
+
+    public void ignore() // ignore the 5 suggestions
+    {
+
+    }
+
     private boolean isValid() // Check if the current word is a valid prefix to a word or a valid word
     {
         return false;
     }
-
-
 }

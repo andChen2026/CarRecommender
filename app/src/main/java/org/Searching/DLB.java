@@ -133,7 +133,6 @@ public class DLB<V extends Comparable<V>> {
         public Node<V> getRight() {return right;}
         public Node<V> getDown() {return down;}
         public boolean isTerminator() {return term;} 
-        public int getFreq() {return freq;}
 
         public void setRight(Node<V> right) {this.right = right;}
         public void setDown(Node<V> down) {this.down = down;}

@@ -21,12 +21,12 @@ public class AutoCorrectorEngine {
         this.cWord = cWord;
     }
 
-    public void wordCorrector() // Corrects the string 
+    public void correct() // Corrects the string 
     {
 
     }
 
-    public void suggest() // Suggests up to 5 corrections 
+    public void suggest() // Suggests up to 5 strings based on frequency
     {
 
     }
