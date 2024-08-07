@@ -68,8 +68,15 @@ public class DLB<V extends Comparable<V>> {
 
     private Node<V> remove(Node<V> s, String key, int idx)
     {
+        if (s == null) return null;
+        if (idx == key.length()-1) return null;
 
-        return null;
+        int cmp = key.charAt(idx) - s.getLet();
+
+        if (cmp == 0) s.setDown(remove(s.getDown(), key, idx+1));
+        else if (cmp > 0) s.setRight(remove(s.getRight(), key, idx));
+        
+        return s;
     }
 
     public List<String> keySet()
