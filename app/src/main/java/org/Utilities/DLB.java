@@ -8,7 +8,7 @@ import java.util.*;
 public class DLB<V extends Comparable<V>> {
 
     private int c;
-    
+    private Node<V> root; // root of the DLB
 
     public int size() {
         return c;
@@ -36,11 +36,7 @@ public class DLB<V extends Comparable<V>> {
     }
    
     public void clear() {
-       
-    }
-
-    public Set<String> keySet() {
-        return null;
+       root = null;
     }
 
     /*
@@ -60,7 +56,7 @@ public class DLB<V extends Comparable<V>> {
             this.right = right;
             this.down = down;
         }
-        
+
         public void setRight(Node<V> right) {this.right = right;}
         public void setDown(Node<V> down) {this.down = down;}
     }
