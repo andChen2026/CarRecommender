@@ -7,7 +7,7 @@ import java.util.*;
 public class DLB<V extends Comparable<V>> {
 
     private int c;
-    private Node<V> root; // root of the DLB
+    private Node<V> root; 
     private List<String> keySet; 
     private List<V> entrySet;
 
