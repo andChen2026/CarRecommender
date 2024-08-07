@@ -25,6 +25,17 @@ public class DLB<V extends Comparable<V>> {
     public V get(String key) { // Return value
         return null;
     }
+
+    public V get(Node<V> s, String key, int idx)
+    {
+        if (s.isTerminator()) return s.getValue();
+
+        int cmp = key.charAt(idx) - s.getLet();
+        if (cmp == 0) return get(s.getDown(), key, idx+1);
+        else if (cmp > 0) return get(s.getRight(), key, idx);
+
+        return null;
+    }
     
     public void put(String key, V value) { // Map Key -> Value
         root = put(root, key, value, 0);
@@ -32,7 +43,8 @@ public class DLB<V extends Comparable<V>> {
 
     public Node<V> put(Node<V> s, String key, V value, int idx)
     {
-        if (s == null) return new Node<V>(key.charAt(idx), value);
+        if (idx == key.length() - 1 && s != null) {return null;}
+        if (s == null) {c++; return new Node<V>(key.charAt(idx), value);}
         
         int cmp = key.charAt(idx) - s.getLet();
         if (cmp == 0) return put(s, key, value, idx+1);
@@ -80,6 +92,12 @@ public class DLB<V extends Comparable<V>> {
     }
 
     public static void main(String[] args) { // For testing
-        
+        DLB<Integer> test = new DLB<>();
+        test.put("one", 1);
+        test.put("two", 2);
+        test.put("three", 3);
+        test.put("four", 4);
+
+
     }
 }
