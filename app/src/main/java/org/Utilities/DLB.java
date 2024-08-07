@@ -1,58 +1,44 @@
 package org.Utilities;
 import java.util.*;
-import java.io.*;
 
-public class DLB<K extends Serializable, V> implements Map<K, V> {
+/*
+ @author Andrew C.
+ A S.T used to Map String Keys to Generic Values
+ */
+public class DLB<V> {
 
-    
+    private int c;
+
     public int size() {
-        return -1;
+        return c;
     }
     
     public boolean isEmpty() {
-        return false;
+        return size() == 0;
     }
 
-    public boolean containsKey(Object key) {
-        return false;
+    public boolean contains(String key)
+    {
+        return get(key) != null;
     }
 
-    public boolean containsValue(Object value) {
-        return false;
-    }
-
-    public V get(Object key) {
+    public V get(String key) {
         return null;
     }
     
-    public V put(K key, V value) {
+    public V put(String key, V value) {
         return null;
     }
 
     public V remove(Object key) {
         return null;
     }
-
-    public void putAll(Map<? extends K, ? extends V> m) {
-        
-    }
    
     public void clear() {
        
     }
 
-    public Set<K> keySet() {
+    public Set<String> keySet() {
         return null;
     }
-
-    
-    public Collection<V> values() {
-        return null;
-    }
-
-    
-    public Set<Entry<K, V>> entrySet() {
-        return null;
-    }
-    
 }
