@@ -7,14 +7,31 @@ package org.Searching;
  */
 public class SearchEngine {
 
-    AutoCompleterEngine acompleter; // Autocompleter engine
-    AutoCorrectorEngine acorrector; // Autocorrector engine
+    AutoCompleterEngine autocompleter; // Autocompleter engine
+    AutoCorrectorEngine autocorrector; // Autocorrector engine
 
-    DLB<Boolean> uh; // UserHistory
-    DLB<Boolean> dict; // Dictionary
+    DLB<Integer> uh; // UserHistory, stores frequencies 
+    DLB<Integer> dict; // Dictionary, stores words
 
-    public SearchEngine(String fileName)
+    StringBuilder cSearch; // current search state
+
+    public SearchEngine(String dictName) // load the dictionary into memory
     {
         
+    }
+
+    public SearchEngine(String dictName, String uhName) // Load the dictionary & userHistory into memory
+    {
+
+    }
+
+    public void addChar(char letter) // add a letter to the end of the current search
+    {
+
+    }
+
+    public void addString(String s) // add a string to the end of the current search
+    {
+
     }
 }

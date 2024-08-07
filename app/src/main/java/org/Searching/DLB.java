@@ -49,8 +49,8 @@ public class DLB<V extends Comparable<V>> {
 
     public Node<V> put(Node<V> s, String key, V value, int idx)
     {
-        if (idx == key.length() - 1 && s != null) {return null;}
-        if (s == null && idx == key.length() - 1) {c++; return new Node<V>(key.charAt(idx), value);}
+        if (idx == key.length() - 1 && s != null) {s.incFreq();}
+        if (s == null && idx == key.length() - 1) {c++; Node<V> ret = new Node<V>(key.charAt(idx), value); ret.incFreq(); return ret;}
         if (s == null) {s = new Node<V>(key.charAt(idx)); s.setDown(put(s.getDown(), key, value, idx+1)); return s;}
 
         int cmp = key.charAt(idx) - s.getLet();
@@ -119,22 +119,25 @@ public class DLB<V extends Comparable<V>> {
     private class Node<V> 
     {
         private char let;
+        private int freq;
         private V value;
         private boolean term;
         private Node<V> right;
         private Node<V> down;
 
-        public Node(char let) {this.let = let;}
-        public Node(char let, V value) {this.let = let; this.value = value;}
+        public Node(char let) {this.let = let; freq = 0;}
+        public Node(char let, V value) {this.let = let; this.value = value; freq = 0;}
 
         public V getValue() {return value;}
         public char getLet() {return let;}
         public Node<V> getRight() {return right;}
         public Node<V> getDown() {return down;}
         public boolean isTerminator() {return term;} 
+        public int getFreq() {return freq;}
 
         public void setRight(Node<V> right) {this.right = right;}
         public void setDown(Node<V> down) {this.down = down;}
+        public void incFreq() {freq++;}
     }
 
     public static void main(String[] args) { // For testing
