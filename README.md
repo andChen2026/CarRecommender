@@ -1,9 +1,11 @@
 
 ## Goal: 
 - Recommend cars to users based on select criteria
+- Utilize a GUI for ease of access
+- Utilize sophisticated Machine Learning algorithms to classify cars into different categories for more convient searching
 - Utilizes many advanced data structures and algorithmic techniques for efficient search and retrieval times
 	- Tries, Heaps, Regular Expression, Compression, and Dynamic Programming
-- Demonstrates knowledge of advanced data structures and algorithmic techniques.
+- Demonstrates mastery of the fundamentals of computer science as well as runtime performance & memory usage
 ### Structure
 - Tries: A symbol table to allow Cars to be stored by their license plate numbers as well as their specific make & model.
 - Heap: A min heap used to reorder different cars based on different priorities
