@@ -44,8 +44,9 @@ public class DLB<V extends Comparable<V>> {
     public Node<V> put(Node<V> s, String key, V value, int idx)
     {
         if (idx == key.length() - 1 && s != null) {return null;}
-        if (s == null) {c++; return new Node<V>(key.charAt(idx), value);}
-        
+        if (s == null && idx == key.length() - 1) {c++; return new Node<V>(key.charAt(idx), value);}
+        if (s == null) {s = new Node<V>(key.charAt(idx)); s.setDown(put(s.getDown(), key, value, idx+1)); return s;}
+
         int cmp = key.charAt(idx) - s.getLet();
         if (cmp == 0) return put(s, key, value, idx+1);
         else if (cmp > 0) s.setRight(put(s.getRight(), key, value, idx));
