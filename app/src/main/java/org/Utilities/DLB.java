@@ -69,7 +69,7 @@ public class DLB<V extends Comparable<V>> {
     private Node<V> remove(Node<V> s, String key, int idx)
     {
         if (s == null) return null;
-        if (idx == key.length()-1) return null;
+        else if (s.isTerminator()) return null;
 
         int cmp = key.charAt(idx) - s.getLet();
 
