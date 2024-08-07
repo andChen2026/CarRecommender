@@ -8,15 +8,11 @@ public class DLB<V extends Comparable<V>> {
 
     private int c;
     private Node<V> root; 
-    //private List<String> keySet; 
-    //private List<V> entrySet;
 
     public DLB()
     {
         c = 0;
         root = null;
-        //keySet = new LinkedList<>();
-        //entrySet = new LinkedList<>();
     }
 
     public int size() {
@@ -62,12 +58,18 @@ public class DLB<V extends Comparable<V>> {
         else if (cmp > 0) s.setRight(put(s.getRight(), key, value, idx));
         else {Node<V> r = new Node<V>(key.charAt(idx)); r.setRight(s); s = r;}
 
-        return s; // give back the current boy
+        return s; 
     }
     
 
     public void remove(String key) { 
-        
+        root = remove(root, key, 0);
+    }
+
+    private Node<V> remove(Node<V> s, String key, int idx)
+    {
+
+        return null;
     }
 
     public List<String> keySet()
@@ -93,7 +95,7 @@ public class DLB<V extends Comparable<V>> {
             collect(s.getRight(), set, word);
         }
 
-        word.deleteCharAt(word.length()-1);
+        word.deleteCharAt(word.length()-1); // delete last character
     }
 
    
@@ -116,7 +118,6 @@ public class DLB<V extends Comparable<V>> {
         private Node<V> down;
 
         public Node(char let) {this.let = let;}
-        public Node(V value) {this.value = value;}
         public Node(char let, V value) {this.let = let; this.value = value;}
 
         public V getValue() {return value;}
