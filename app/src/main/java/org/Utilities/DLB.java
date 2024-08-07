@@ -37,12 +37,7 @@ public class DLB<V extends Comparable<V>> {
         int cmp = key.charAt(idx) - s.getLet();
         if (cmp == 0) return put(s, key, value, idx+1);
         else if (cmp > 0) s.setRight(put(s.getRight(), key, value, idx));
-        else // create new node
-        {
-            Node<V> r = new Node<V>(key.charAt(idx));
-            r.setRight(s);
-            return r;
-        }
+        else {Node<V> r = new Node<V>(key.charAt(idx)); r.setRight(s); s = r;}
 
         return s; // give back the current boy
     }
@@ -82,5 +77,9 @@ public class DLB<V extends Comparable<V>> {
 
         public void setRight(Node<V> right) {this.right = right;}
         public void setDown(Node<V> down) {this.down = down;}
+    }
+
+    public static void main(String[] args) { // For testing
+        
     }
 }
