@@ -43,9 +43,25 @@ public class DLB<V extends Comparable<V>> {
         return null;
     }
 
+    /*
+     @author Andrew C
+     A private inner Node class specific to the DLB class
+     */
     @SuppressWarnings("hiding")
     private class Node<V> 
     {
+        private V value;
+        private Node<V> right;
+        private Node<V> down;
+
+        public Node(V value, Node<V> right, Node<V> down)
+        {
+            this.value = value;
+            this.right = right;
+            this.down = down;
+        }
         
+        public void setRight(Node<V> right) {this.right = right;}
+        public void setDown(Node<V> down) {this.down = down;}
     }
 }
