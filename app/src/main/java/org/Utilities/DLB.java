@@ -1,5 +1,5 @@
 package org.Utilities;
-
+import java.util.*;
 /*
  @author Andrew C.
  A S.T used to Map String Keys to Generic Values
@@ -8,6 +8,16 @@ public class DLB<V extends Comparable<V>> {
 
     private int c;
     private Node<V> root; // root of the DLB
+    private List<String> keySet; 
+    private List<V> entrySet;
+
+    public DLB()
+    {
+        c = 0;
+        root = null;
+        keySet = new LinkedList<>();
+        entrySet = new LinkedList<>();
+    }
 
     public int size() {
         return c;
@@ -99,6 +109,8 @@ public class DLB<V extends Comparable<V>> {
         test.put("three", 3);
         test.put("four", 4);
 
+        System.out.println(test.size());
+        
 
     }
 }
